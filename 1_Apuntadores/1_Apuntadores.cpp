@@ -12,7 +12,7 @@ void PruebaArgumentos(int argc, char** argv)
 			int j = 0;
 			int value = 0;
 			std::cout << " ";
-			// argv[0][0]  
+
 			do
 			{
 				value = (int)argv[i][j];
@@ -35,7 +35,7 @@ void Promedio(int argc, char** argv)
 	//int* x = (int*) malloc(sizeof(int));
 	// forma C++ de asignar memoria
 
-	int* x = new int;
+	/*int* x = new int;
 
 	*x = 99;
 	std::cout << "sizeof int " << sizeof(int) << "\n";
@@ -46,8 +46,7 @@ void Promedio(int argc, char** argv)
 	std::cout << " x :" << *x << " en " << x << "\n";
 
 	*(x + 1) = 18;
-	std::cout << " x+1 :" << *(x + 1) << " en " << x + 1 << "\n";
-
+	std::cout << " x+1 :" << *(x + 1) << " en " << x + 1 << "\n";*/
 
 	//generar una lista de 100 enteros aleatorios
 	 
