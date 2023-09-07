@@ -35,7 +35,7 @@ void Promedio(int argc, char** argv)
 	//int* x = (int*) malloc(sizeof(int));
 	// forma C++ de asignar memoria
 
-	/*int* x = new int;
+	int* x = new int;
 
 	*x = 99;
 	std::cout << "sizeof int " << sizeof(int) << "\n";
@@ -46,38 +46,50 @@ void Promedio(int argc, char** argv)
 	std::cout << " x :" << *x << " en " << x << "\n";
 
 	*(x + 1) = 18;
-	std::cout << " x+1 :" << *(x + 1) << " en " << x + 1 << "\n";*/
+	std::cout << " x+1 :" << *(x + 1) << " en " << x + 1 << "\n";
 
-	std::cout << "Escribe un numero o presiona q para sacar el promedio" << std::endl;
-
-	//arreglo de 100 enteros
-	int* y = new int[100];
-	//memset(y, 0, 100 * sizeof(int));
-	char yaNoHayDatos = 'yd';
-	bool continuar = true;
-	float division = 0;
 
 	//generar una lista de 100 enteros aleatorios
+	 
 	int* acumulador = new int;
 	*acumulador = 0;
+	//saber si continua poniendo numeros o no
+	char* continuar = new char;
+	*continuar = 10;
+	//float division
+	float* division = new float;
+	*division = 0.0;
+	//arreglo de 100 enteros
+	int* y = new int[100];
+	memset(y, 0, 100 * sizeof(int));
+
 	for (int i = 0; i < 100; i++)
 	{
-		if (continuar)
-		{
-			division++;
-			std::cin >> y[i];
-			std::cout << " y[" << i << "] = " << *(y + i) << "\n";
-			*acumulador += y[i];
-		}
+		std::cout << "Escribe un numero\n" << std::endl;
+		std::cin >> y[i];
 
-			std::cin >> yaNoHayDatos;
-		if (yaNoHayDatos == 'q')
+		if (y[i] > 0)
 		{
-			break;
+			std::cout << " y[" << i << "] = " << *(y + i) << "\n";
+			*division += 1.0;
+			*acumulador += y[i];
+
+			std::cout << "quieres continuar?\n";
+			std::cin >> *continuar;
+
+			if (*continuar == 115)
+			{
+
+			}
+			else if (*continuar == 110)
+			{
+				std::cout << "Aqui esta el promedio: \n";
+				break;
+			}
 		}
 	}
-	float promedio = *acumulador / division;
-	std::cout << " prmedio = " << promedio << "\n";
+	float promedio = *acumulador / *division;
+	std::cout << " promedio = " << promedio << "\n";
 }
 
 int main(int argc, char** argv)
